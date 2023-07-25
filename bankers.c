@@ -1,5 +1,5 @@
 #include<stdio.h>
-// #include<conio.h>
+#include<conio.h>
 void main(){
     int k=0,output[10],d=0,t=0,ins[5],i,avail[5],allocated[10][5],need[10][5],max[10][5],pno,j,rz,P[10],count=0;
     printf("\n Enter the number of resources : ");
@@ -70,7 +70,7 @@ void main(){
     for(i=0;i<k;i++)
         printf(" P[%d] ",output[i]);
     printf(">");
-    // getch();
+    getch();
 }
 
 /*
