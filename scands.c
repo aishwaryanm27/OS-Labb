@@ -69,3 +69,17 @@ int main(){
     return 0;
 }
 
+/*output:
+Enter the number of requestes: 
+7
+Enter request Sequence
+82 170 43 140 24 16 190
+Enter intial head position
+50
+Enter total disk size
+200
+Enter the head movement direction for high 1 and low 0
+1
+Sequence of request access: 
+82140170190432416
+Total head movement is 332*/

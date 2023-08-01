@@ -2,24 +2,39 @@
 #include<stdlib.h>
 int main()
 {
-    int RQ[100],i,n,TotalHeadMoment=0,initial;
-    printf("Enter the number of requests:\n");
+    int i,n,req[50],mov=0,cp;
+    printf("Enter the current position");
+    scanf("%d",&cp);
+    printf("Enter thr number of requests");
     scanf("%d",&n);
-    printf("Enter the requests sequence\n");
-    for(i=0;i<n;i++)
-       scanf("%d",&RQ[i]);
-    printf("Enter initial head position\n");
-    scanf("%d",&initial);
-
-    //logic for FCFS disk scheduling
-    
-    printf("Sequence of request access:\n");
+    printf("enter the request order:");
     for(i=0;i<n;i++)
     {
-        printf("%d",RQ[i]);
-        TotalHeadMoment=TotalHeadMoment+abs(RQ[i]-initial);
-        initial=RQ[i];
+    scanf("%d",&req[i]);
     }
-    printf("\nTotal head moment is %d", TotalHeadMoment);
-    return 0;
+    mov=mov+abs(cp-req[0]);
+   
+    printf("%d->%d",cp,req[0]);
+    for(i=1;i<n;i++)
+    {
+        mov=mov+abs(req[i]-req[i-1]);
+        printf("-->%d",req[i]);
+    }
+    printf("\n");
+    printf("total head movement=%d\n",mov);
+
 }
+
+/*OUTPUT
+Enter the current position 50
+Enter thr number of requests 7
+enter the request order: 82
+170
+43
+140
+24
+16
+190
+50->82-->170-->43-->140-->24-->16-->190
+total head movement=642
+*/
